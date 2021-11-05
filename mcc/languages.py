@@ -1,10 +1,13 @@
+import os
 from enum import Enum
 
 from tree_sitter import Language
 
-GO_LANGUAGE = Language("languages.so", "go")
-JS_LANGUAGE = Language("languages.so", "javascript")
-PY_LANGUAGE = Language("languages.so", "python")
+so = os.path.join(os.path.dirname(__file__), "language.so")
+
+GO_LANGUAGE = Language(so, "go")
+JS_LANGUAGE = Language(so, "javascript")
+PY_LANGUAGE = Language(so, "python")
 
 
 class Lang(str, Enum):

@@ -13,7 +13,7 @@ packages = [
     { include = "mcc" }
 ]
 build = "build.py"
-include = ["CHANGELOG.md", "LICENSE", "README.md", "languages.so"]
+include = ["CHANGELOG.md", "LICENSE", "README.md", "mcc/language.so"]
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Development Status :: 3 - Alpha",
