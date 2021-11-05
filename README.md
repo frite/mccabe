@@ -77,7 +77,7 @@ from mcc import get_provider_class
 from mcc.languages import Lang
 
 cls = get_provider_class(Lang.py)
-ret = cls(file="test.py")
+ret = cls(file="test.py").run()
 print(ret)
 ```
 
