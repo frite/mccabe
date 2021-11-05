@@ -2,7 +2,6 @@
 
 [![image](https://img.shields.io/github/license/long2ice/mccabe)](https://github.com/long2ice/mccabe)
 [![image](https://github.com/long2ice/mccabe/workflows/ci/badge.svg)](https://github.com/long2ice/mccabe/actions?query=workflow:ci)
-[![image](https://coveralls.io/repos/github/mccabe/mccabe/badge.svg)](https://coveralls.io/github/long2ice/mccabe)
 
 ## Introduction
 
