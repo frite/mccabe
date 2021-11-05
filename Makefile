@@ -1,10 +1,10 @@
-checkfiles = CyclomaticComplexity/ tests/ conftest.py
+checkfiles = mcc/ tests/ conftest.py
 py_warn = PYTHONDEVMODE=1
 
 up:
 	@poetry update
 
-deps:
+deps: clean
 	@poetry install
 
 style: deps
@@ -22,6 +22,9 @@ test: deps
 
 build:
 	@poetry build
+
+clean:
+	@rm -rf ./dist ./build
 
 benchmark: deps
 	@python benchmark/main.py

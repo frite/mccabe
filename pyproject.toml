@@ -1,16 +1,16 @@
 [tool.poetry]
-name = "cyclomaticcomplexity"
+name = "mcc"
 version = "0.1.0"
 description = "Calculate the cyclomatic complexity of the source code"
 authors = ["long2ice <long2ice@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/long2ice/CyclomaticComplexity"
-repository = "https://github.com/long2ice/CyclomaticComplexity.git"
-documentation = "https://github.com/long2ice/CyclomaticComplexity"
+homepage = "https://github.com/long2ice/mccabe"
+repository = "https://github.com/long2ice/mccabe.git"
+documentation = "https://github.com/long2ice/mccabe"
 keywords = ["cyclomatic", "complexity", "code"]
 packages = [
-    { include = "CyclomaticComplexity" }
+    { include = "mcc" }
 ]
 build = "build.py"
 include = ["CHANGELOG.md", "LICENSE", "README.md", "languages.so"]
@@ -55,7 +55,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-cyclomaticcomplexity = "CyclomaticComplexity.cli:main"
+mcc = "mcc.cli:main"
 
 [tool.black]
 line-length = 100
