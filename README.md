@@ -81,8 +81,6 @@ ret = cls(file="test.py").run()
 print(ret)
 ```
 
-## Benchmark
-
 ## Develop
 
 ### Clone
@@ -108,6 +106,47 @@ Before you commit, you should check the code style and syntax.
 ```shell
 make style ci
 ```
+
+### Add other language support
+
+If you want to add other language support by `tree-sitter` like `c++`, just follow the steps:
+
+1. Run `git submodule add https://github.com/tree-sitter/tree-sitter-cpp.git vendor/tree-sitter-cpp`
+2. Update `build.py` to add `cpp` support.
+
+    ```python
+    Language.build_library(
+        'languages.so',
+        [
+            'vendor/tree-sitter-go',
+            'vendor/tree-sitter-javascript',
+            'vendor/tree-sitter-python',
+            'vendor/tree-sitter-cpp'
+        ]
+    )
+    ```
+3. Update `languages.py` add `cpp` enum.
+
+   ```python
+    class Lang(str, Enum):
+       py = "py"
+       go = "go"
+       js = "js"
+       cpp = "cpp"
+    ```
+4. Create new file `cpp.py` and write a class which inherit `Mccabe`.
+
+    ```python
+    from mcc.providers import Mccabe
+    from mcc.languages import Lang
+
+    class MccabeCpp(Mccabe):
+        suffix = ".cpp"
+        language = Lang.cpp
+        judge_nodes = [...]
+    ```
+
+That's all! Then you can make effect in `cpp`!
 
 ## License
 
