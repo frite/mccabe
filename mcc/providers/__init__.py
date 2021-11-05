@@ -1,9 +1,10 @@
+import multiprocessing
 import os
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from tree_sitter import Node, Parser, Tree
 
-from mcc.exceptions import LanguageNotSupportException, ParamMissingException
+from mcc.exceptions import ParamMissingException
 from mcc.languages import Lang
 
 
@@ -26,14 +27,8 @@ class Mccabe:
             raise ParamMissingException(
                 "You must specify a source code file or directory or raw source code"
             )
-        try:
-            lib = self.language.get_lib()
-        except AttributeError:
-            raise LanguageNotSupportException(f"The language {self.language} is not supported")
         self.directory = directory
         self.file = file
-        self.parser = Parser()
-        self.parser.set_language(lib)
 
     def _source_codes(self):
         if self.file:
@@ -56,10 +51,17 @@ class Mccabe:
             count += self._visit_node(item)
         return count
 
+    def _complexity_item(self, args: Tuple[str, str]):
+        file, code = args
+        parser = Parser()
+        parser.set_language(self.language.get_lib())
+        tree = parser.parse(code.encode())  # type:Tree
+        return file, self._visit_node(tree.root_node)
+
     def complexity(self):
-        for file, code in self._source_codes():
-            tree = self.parser.parse(code.encode())  # type:Tree
-            yield file, self._visit_node(tree.root_node)
+        params = [(file, code) for file, code in self._source_codes()]
+        with multiprocessing.Pool() as pool:
+            return pool.map(self._complexity_item, params)
 
     def run(self):
         ret = {}
