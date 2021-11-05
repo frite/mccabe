@@ -1,4 +1,4 @@
-checkfiles = mcc/ tests/ conftest.py
+checkfiles = mcc/ tests/ conftest.py build.py
 py_warn = PYTHONDEVMODE=1
 
 up:

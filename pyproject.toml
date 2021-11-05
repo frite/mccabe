@@ -1,63 +1,63 @@
 [tool.poetry]
-name = "mcc"
-version = "0.1.0"
-description = "Calculate the cyclomatic complexity of the source code"
 authors = ["long2ice <long2ice@gmail.com>"]
-license = "Apache-2.0"
-readme = "README.md"
-homepage = "https://github.com/long2ice/mccabe"
-repository = "https://github.com/long2ice/mccabe.git"
-documentation = "https://github.com/long2ice/mccabe"
-keywords = ["cyclomatic", "complexity", "code"]
-packages = [
-    { include = "mcc" }
-]
-include = ["CHANGELOG.md", "LICENSE", "README.md", "mcc/language.so"]
 classifiers = [
-    "License :: OSI Approved :: Apache Software License",
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Database",
-    "Operating System :: POSIX",
-    "Operating System :: MacOS :: MacOS X",
-    "Operating System :: Microsoft :: Windows",
+  "License :: OSI Approved :: Apache Software License",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Database",
+  "Operating System :: POSIX",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
 ]
+description = "Calculate the cyclomatic complexity of the source code"
+documentation = "https://github.com/long2ice/mccabe"
+homepage = "https://github.com/long2ice/mccabe"
+include = ["CHANGELOG.md", "LICENSE", "README.md"]
+keywords = ["cyclomatic", "complexity", "code"]
+license = "Apache-2.0"
+name = "mcc"
+packages = [
+  {include = "mcc"},
+]
+readme = "README.md"
+repository = "https://github.com/long2ice/mccabe.git"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-tree-sitter = { git = "https://github.com/tree-sitter/py-tree-sitter.git" }
 click = "^8.0.3"
+python = "^3.7"
+tree-sitter = {git = "https://github.com/tree-sitter/py-tree-sitter.git"}
 
 [tool.poetry.dev-dependencies]
 # test
 pytest = "6.2.5"
-pytest-mock = "3.6.1"
-pytest-xdist = "2.4.0"
-pytest-sugar = "0.9.4"
-pytest-cov = "3.0.0"
 pytest-benchmark = "^3.4.1"
+pytest-cov = "3.0.0"
+pytest-mock = "3.6.1"
+pytest-sugar = "0.9.4"
+pytest-xdist = "2.4.0"
 # lint
+bandit = "^1.7.0"
 black = "21.9b0"
 isort = "5.9.3"
 mypy = "0.910"
 pyproject-flake8 = "^0.0.1-alpha.2"
-bandit = "^1.7.0"
 
 [tool.poetry.build]
-script = "build.py"
 generate-setup-file = false
+script = "build.py"
 
 [build-system]
-requires = ["poetry-core>=1.0.7", "setuptools", "tree_sitter"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.7", "setuptools", "tree_sitter"]
 
 [tool.poetry.scripts]
 mcc = "mcc.cli:main"
