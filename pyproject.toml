@@ -34,7 +34,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-tree-sitter = "^0.19.0"
+tree-sitter = { git = "https://github.com/tree-sitter/py-tree-sitter.git" }
 click = "^8.0.3"
 
 [tool.poetry.dev-dependencies]

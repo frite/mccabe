@@ -509,6 +509,13 @@ description = "Python bindings to the Tree-sitter parsing library"
 category = "main"
 optional = false
 python-versions = ">=3.3"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/tree-sitter/py-tree-sitter.git"
+reference = "master"
+resolved_reference = "b4db17e4d43f27a040b4bf087695cc200512e4ea"
 
 [[package]]
 name = "typed-ast"
@@ -541,7 +548,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "f4f47ec6a86a34e4d7cd65c817faa85e78bb5143846842b692ec8ba535793133"
+content-hash = "708e56ae3c6a98bd90e653788089494a2875e20980160b909f05a09a9de48749"
 
 [metadata.files]
 atomicwrites = [
@@ -856,10 +863,7 @@ tomli = [
     {file = "tomli-1.2.2-py3-none-any.whl", hash = "sha256:f04066f68f5554911363063a30b108d2b5a5b1a010aa8b6132af78489fe3aade"},
     {file = "tomli-1.2.2.tar.gz", hash = "sha256:c6ce0015eb38820eaf32b5db832dbc26deb3dd427bd5f6556cf0acac2c214fee"},
 ]
-tree-sitter = [
-    {file = "tree_sitter-0.19.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:03fd05fe099639d4aec1b59dec630a69d32e3d07a078d83bc060209a8dbb2132"},
-    {file = "tree_sitter-0.19.0.tar.gz", hash = "sha256:861afcf39f957fdd75f8b93124bc403f2f3abe8b81f104c05b1a749e6dd33499"},
-]
+tree-sitter = []
 typed-ast = [
     {file = "typed_ast-1.4.3-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:2068531575a125b87a41802130fa7e29f26c09a2833fea68d9a40cf33902eba6"},
     {file = "typed_ast-1.4.3-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:c907f561b1e83e93fad565bac5ba9c22d96a54e7ea0267c708bffe863cbe4075"},
