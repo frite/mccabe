@@ -37,6 +37,7 @@ Options:
   -V, --version              Show the version and exit.
   -d, --directory TEXT       The source code directory
   -f, --file TEXT            The source code file
+  -m, --min INTEGER          The min threshold value
   -l, --language [py|go|js]  The source code language  [required]
   --help                     Show this message and exit.
 ```
@@ -62,6 +63,19 @@ You can also calculate the cyclomatic complexity for directory, which will do pa
     "tests/test_languages.py": 9,
     "tests/__init__.py": 0,
     "tests/test_provider.py": 4,
+    "tests/test_cyclomaticc_complexity.py": 8,
+    "tests/sources/py.py": 24
+}
+```
+
+### Set threshold value
+
+You can set threshold value by option `-m`.
+
+```shell
+> mcc -l py -d tests -m 5
+{
+    "tests/test_languages.py": 9,
     "tests/test_cyclomaticc_complexity.py": 8,
     "tests/sources/py.py": 24
 }
