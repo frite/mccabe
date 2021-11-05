@@ -13,4 +13,4 @@ Language.build_library(
 
 
 def build(setup_kwargs):
-    pass
+    setup_kwargs.update(include_package_data=True)
