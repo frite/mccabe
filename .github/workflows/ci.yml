@@ -24,7 +24,12 @@ jobs:
         run: |
           pip install -U pip poetry
           poetry config virtualenvs.create false
-      - name: Run ci
+      - name: Install deps
+        run: make deps
+      - name: Debug
+        run: |
+          ls -l
+      - name: Make CI
         run: make ci
       - name: Upload Coverage
         run: coveralls --service=github

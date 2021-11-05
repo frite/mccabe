@@ -20,7 +20,7 @@ check: deps
 test: deps
 	$(py_warn) poetry run pytest --cov
 
-build:
+build: clean
 	@poetry build
 
 clean:
