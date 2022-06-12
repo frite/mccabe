@@ -3,7 +3,7 @@ from mcc.providers import Mccabe
 
 
 class MccabeGo(Mccabe):
-    suffix = ".go"
+    suffixes = (".go",)
     language = Lang.go
     judge_nodes = [
         "if_statement",

@@ -9,7 +9,7 @@ from mcc.languages import Lang
 
 
 class Mccabe:
-    suffix: str
+    suffixes: Tuple[str, ...]
     language: Lang
     judge_nodes: List[str]
 
@@ -37,7 +37,7 @@ class Mccabe:
         elif self.directory:
             for root, dirs, files in os.walk(self.directory):
                 for file in files:
-                    if not file.endswith(self.suffix):
+                    if not file.endswith(self.suffixes):
                         continue
                     path = os.path.join(root, file)
                     with open(path) as f:
