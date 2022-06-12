@@ -3,7 +3,7 @@ from mcc.providers import Mccabe
 
 
 class MccabeJS(Mccabe):
-    suffix = ".js"
+    suffixes = (".js",)
     language = Lang.js
     judge_nodes = [
         "if_statement",
