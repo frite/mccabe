@@ -8,6 +8,8 @@ deps: clean
 	poetry install
 
 style: deps
+	git submodule init
+	git submodule update
 	isort -src $(checkfiles)
 	black $(checkfiles)
 
