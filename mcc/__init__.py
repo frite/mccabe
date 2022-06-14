@@ -4,12 +4,12 @@ from typing import Type
 from mcc.exceptions import LanguageNotSupportException
 from mcc.languages import Lang
 from mcc.providers import Mccabe
-from mcc.providers.cpp import MccabeCPP  # noqa:F401
 
 # should import these when use __subclasses__
 from mcc.providers.go import MccabeGo  # noqa:F401
 from mcc.providers.js import MccabeJS  # noqa:F401
 from mcc.providers.python import MccabePy  # noqa:F401
+from mcc.providers.cpp import MccabeCPP  # noqa:F401
 
 
 @lru_cache()
