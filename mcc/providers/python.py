@@ -3,7 +3,7 @@ from mcc.providers import Mccabe
 
 
 class MccabePy(Mccabe):
-    suffix = ".py"
+    suffixes = (".py",)
     language = Lang.py
     judge_nodes = [
         "if_statement",

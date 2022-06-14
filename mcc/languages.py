@@ -8,12 +8,14 @@ so = os.path.join(os.path.dirname(__file__), "language.so")
 GO_LANGUAGE = Language(so, "go")
 JS_LANGUAGE = Language(so, "javascript")
 PY_LANGUAGE = Language(so, "python")
+CPP_LANGUAGE = Language(so, "cpp")
 
 
 class Lang(str, Enum):
     py = "py"
     go = "go"
     js = "js"
+    cpp = "cpp"
 
     def get_lib(self):
         if self == Lang.py:
@@ -22,3 +24,5 @@ class Lang(str, Enum):
             return GO_LANGUAGE
         elif self == Lang.js:
             return JS_LANGUAGE
+        elif self == Lang.cpp:
+            return CPP_LANGUAGE
