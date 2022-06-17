@@ -10,12 +10,14 @@ Calculate the cyclomatic complexity of the source code.
 Current supported languages:
 
 - [Go](https://github.com/tree-sitter/tree-sitter-go)
-- [Python](https://github.com/tree-sitter/tree-sitter-javascript)
-- [JavaScript](https://github.com/tree-sitter/tree-sitter-python)
+- [JavaScript](https://github.com/tree-sitter/tree-sitter-javascript)
+- [Python](https://github.com/tree-sitter/tree-sitter-python)
+- [C++](https://github.com/tree-sitter/tree-sitter-cpp)
+- [C](https://github.com/tree-sitter/tree-sitter-c)
 
 ## Installation
 
-Because don't publish to pypi, you can install from source code.
+The tool is not published to Pypi, you can install it directly from source code.
 
 ```shell
 pip install git+https://github.com/long2ice/mccabe.git
@@ -23,9 +25,9 @@ pip install git+https://github.com/long2ice/mccabe.git
 
 ## Usage
 
-You can use `mccabe` in both `cli` and `program`.
+You can use `mccabe` both as a CLI program and as a module in your program.
 
-### Use in cli
+### CLI
 
 ```shell
 > mcc --help
@@ -42,9 +44,9 @@ Options:
   --help                     Show this message and exit.
 ```
 
-### For single file
+### For a single file
 
-You can calculate the cyclomatic complexity for single source file.
+You can calculate the cyclomatic complexity for a single source file.
 
 ```shell
 > mcc -l py -f tests/test_languages.py
@@ -53,9 +55,9 @@ You can calculate the cyclomatic complexity for single source file.
 }
 ```
 
-### For directory
+### For multiple files under a directory.
 
-You can also calculate the cyclomatic complexity for directory, which will do parallel computing.
+You can also calculate the cyclomatic complexity for all files inside a directory, which leverages parallel computing.
 
 ```shell
 > mcc -l py -d tests
@@ -70,7 +72,7 @@ You can also calculate the cyclomatic complexity for directory, which will do pa
 
 ### Set threshold value
 
-You can set threshold value by option `-m`.
+You can set a minimun threshold value by using the `-m` flag.
 
 ```shell
 > mcc -l py -d tests -m 5
@@ -83,7 +85,7 @@ You can set threshold value by option `-m`.
 
 ### Use in program
 
-Also, you can use it in program.
+Also, you can load it as a module in your programs.
 
 ```python
 from mcc import get_provider_class
@@ -98,7 +100,7 @@ print(ret)
 
 ### Clone
 
-First you clone the repo.
+First, you need to clone the repo.
 
 ```shell
 git clone https://github.com/long2ice/mccabe.git
@@ -114,13 +116,13 @@ make deps
 
 ### Check CI
 
-Before you commit, you should check the code style and syntax.
+Before commiting your code, you should check the code style and syntax.
 
 ```shell
 make style ci
 ```
 
-### Add other language support
+### Extend language support
 
 If you want to add other language support by `tree-sitter` like `c++`, just follow the steps:
 
@@ -159,7 +161,7 @@ If you want to add other language support by `tree-sitter` like `c++`, just foll
         judge_nodes = [...]
     ```
 
-That's all! Then you can make effect in `cpp`!
+That's all! You can now calculate the cyclomatic complexity of `cpp` source files!
 
 ## License
 

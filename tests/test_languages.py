@@ -9,6 +9,7 @@ def test_convert():
     assert Lang.go == Lang("go")
     assert Lang.js == Lang("js")
     assert Lang.cpp == Lang("cpp")
+    assert Lang.c == Lang("c")
     with pytest.raises(ValueError):
         Lang("xxx")
 
@@ -18,3 +19,4 @@ def test_get_lib():
     assert Lang.go.get_lib() == languages.GO_LANGUAGE
     assert Lang.js.get_lib() == languages.JS_LANGUAGE
     assert Lang.cpp.get_lib() == languages.CPP_LANGUAGE
+    assert Lang.c.get_lib() == languages.C_LANGUAGE

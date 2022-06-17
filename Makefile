@@ -5,6 +5,8 @@ up:
 	poetry update
 
 deps: clean
+	git submodule init
+	git submodule update
 	poetry install
 
 style: deps

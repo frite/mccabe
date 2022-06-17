@@ -9,6 +9,7 @@ GO_LANGUAGE = Language(so, "go")
 JS_LANGUAGE = Language(so, "javascript")
 PY_LANGUAGE = Language(so, "python")
 CPP_LANGUAGE = Language(so, "cpp")
+C_LANGUAGE = Language(so, "c")
 
 
 class Lang(str, Enum):
@@ -16,6 +17,7 @@ class Lang(str, Enum):
     go = "go"
     js = "js"
     cpp = "cpp"
+    c = "c"
 
     def get_lib(self):
         if self == Lang.py:
@@ -26,3 +28,5 @@ class Lang(str, Enum):
             return JS_LANGUAGE
         elif self == Lang.cpp:
             return CPP_LANGUAGE
+        elif self == Lang.c:
+            return C_LANGUAGE
