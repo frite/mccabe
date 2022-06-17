@@ -10,8 +10,8 @@ Calculate the cyclomatic complexity of the source code.
 Current supported languages:
 
 - [Go](https://github.com/tree-sitter/tree-sitter-go)
-- [Python](https://github.com/tree-sitter/tree-sitter-javascript)
-- [JavaScript](https://github.com/tree-sitter/tree-sitter-python)
+- [JavaScript](https://github.com/tree-sitter/tree-sitter-javascript)
+- [Python](https://github.com/tree-sitter/tree-sitter-python)
 - [C++](https://github.com/tree-sitter/tree-sitter-cpp)
 - [C](https://github.com/tree-sitter/tree-sitter-c)
 
