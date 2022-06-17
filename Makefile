@@ -5,11 +5,11 @@ up:
 	poetry update
 
 deps: clean
+	git submodule init
+	git submodule update
 	poetry install
 
 style: deps
-	git submodule init
-	git submodule update
 	isort -src $(checkfiles)
 	black $(checkfiles)
 
